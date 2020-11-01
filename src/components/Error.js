@@ -1,7 +1,7 @@
-import React from 'reat';
+import React from 'react';
 
-const Error = () =>{
-    <p className="alert alert-danger error">Hubo un error</p>
-}
+const Error = () =>( 
+    <p className="alert alert-danger alert">Hubo un error</p>
+);
 
 export default Error;
