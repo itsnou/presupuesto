@@ -5,8 +5,9 @@ import Formulario from './components/Formulario'
 function App() {
 
   //definir el state
-  const [presupuesto, setPresupuesto] = useState(0)
-  const [restante, setRestante] = useState(0)
+  const [presupuesto, setPresupuesto] = useState(0);
+  const [restante, setRestante] = useState(0);
+  const [ mostrarPregunta, setMostrarPregunta] = useState(true);
 
 
 
@@ -15,10 +16,15 @@ function App() {
       <header>
         <h1>Gasto Semanal</h1>
         <div className="contenido-principal contenido">
+        { mostrarPregunta ? 
+        (
           <Pregunta 
             setPresupuesto={setPresupuesto}
             setRestante={setRestante}
+            setMostrarPregunta= {setMostrarPregunta}
           />
+        ): 
+        (
           <div className="row">
             <div className="one-half column">
               <Formulario/>
@@ -27,6 +33,10 @@ function App() {
               2
             </div>
           </div>
+        )
+        }
+          
+          
         </div>
 
       </header>
